@@ -1,3 +1,9 @@
+# Webpack Dll
+dll
+
+# Webpack build
+build
+
 # Logs
 logs
 *.log
