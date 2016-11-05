@@ -20,14 +20,15 @@
     "redux": "^3.6.0",
     "redux-logger": "^2.7.4",
     "redux-thunk": "^2.1.0",
+    "rimraf": "^2.5.4",
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.14.1",
     "webpack-merge": "^0.15.0"
   },
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --config=webpack.config.dev.js --open",
-    "build:dll": "cross-env NODE_ENV=development webpack --config=webpack.config.dll.js",
-    "build": "cross-env NODE_ENV=production webpack --config=webpack.config.build.js",
+    "build:dll": "cross-env NODE_ENV=development rimraf dll && webpack --config=webpack.config.dll.js",
+    "build": "cross-env NODE_ENV=production rimraf build && webpack --config=webpack.config.build.js",
     "postinstall": "npm run build:dll"
   },
   "repository": {
